@@ -47,25 +47,38 @@ export default function Student() {
   }
 
   return (
-    <div style={{ 
-      background: 'linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0f9ff 100%)',
+    <div className="particles" style={{ 
       minHeight: '100vh',
-      padding: '20px 0'
+      padding: '20px 0',
+      position: 'relative'
     }}>
+      {/* Floating particles */}
+      {[...Array(8)].map((_, i) => (
+        <div 
+          key={i}
+          className="particle"
+          style={{
+            left: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 6}s`,
+            animationDuration: `${4 + Math.random() * 4}s`
+          }}
+        />
+      ))}
+      
       <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 16px' }}>
         <div style={{ marginBottom: 32 }}>
-          <h1 style={{ 
+          <h1 className="gradient-text float" style={{ 
             fontSize: 32, 
-            fontWeight: 800, 
-            color: '#065f46',
+            fontWeight: 900, 
             margin: '0 0 8px',
             display: 'flex',
             alignItems: 'center',
-            gap: 12
+            gap: 12,
+            textShadow: '0 0 30px rgba(16, 185, 129, 0.5)'
           }}>
             🌟 Welcome back, Eco-Warrior!
           </h1>
-          <p style={{ color: '#059669', fontSize: 16, margin: 0 }}>
+          <p style={{ color: '#cbd5e1', fontSize: 16, margin: 0, fontWeight: 500 }}>
             Ready to make a positive impact today?
           </p>
         </div>
@@ -86,10 +99,9 @@ export default function Student() {
         </div>
 
         <div style={{ marginBottom: 32 }}>
-          <h2 style={{ 
+          <h2 className="gradient-text" style={{ 
             fontSize: 24, 
-            fontWeight: 700, 
-            color: '#065f46',
+            fontWeight: 800, 
             margin: '0 0 16px',
             display: 'flex',
             alignItems: 'center',
@@ -114,18 +126,14 @@ export default function Student() {
           </div>
         </div>
 
-        <div style={{
-          background: 'white',
+        <div className="card-3d" style={{
           borderRadius: 20,
           padding: 24,
-          border: '2px solid #e5e7eb',
-          boxShadow: '0 8px 25px rgba(0,0,0,0.08)'
         }}>
-          <h3 style={{ 
+          <h3 className="gradient-text" style={{ 
             margin: '0 0 16px', 
             fontSize: 18, 
-            fontWeight: 700,
-            color: '#111827',
+            fontWeight: 800,
             display: 'flex',
             alignItems: 'center',
             gap: 8
@@ -136,20 +144,30 @@ export default function Student() {
             {['Climate Basics', 'Biodiversity', 'Waste Management', 'Energy Conservation'].map((module) => (
               <div
                 key={module}
+                className="glass"
                 style={{
-                  background: 'linear-gradient(135deg, #eff6ff, #dbeafe)',
-                  border: '2px solid #93c5fd',
+                  background: 'linear-gradient(145deg, rgba(59, 130, 246, 0.2), rgba(29, 78, 216, 0.1))',
+                  border: '2px solid rgba(59, 130, 246, 0.3)',
+                  backdropFilter: 'blur(15px)',
+                  WebkitBackdropFilter: 'blur(15px)',
                   borderRadius: 12,
                   padding: 16,
                   textAlign: 'center',
                   cursor: 'pointer',
-                  transition: 'all 0.2s ease'
+                  transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                  boxShadow: '0 8px 20px rgba(59, 130, 246, 0.2)'
                 }}
-                onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
-                onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px) scale(1.05)'
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(59, 130, 246, 0.3)'
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)'
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(59, 130, 246, 0.2)'
+                }}
               >
-                <div style={{ fontSize: 24, marginBottom: 8 }}>📖</div>
-                <div style={{ fontSize: 14, fontWeight: 600, color: '#1e40af' }}>
+                <div style={{ fontSize: 28, marginBottom: 8, textShadow: '0 0 15px rgba(59, 130, 246, 0.6)' }}>📖</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: '#60a5fa' }}>
                   {module}
                 </div>
               </div>

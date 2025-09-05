@@ -40,22 +40,18 @@ export default function ImpactTracker({ stats }) {
   ]
 
   return (
-    <div style={{
-      background: 'white',
+    <div className="card-3d pulse" style={{
       borderRadius: 20,
       padding: 24,
-      border: '2px solid #e5e7eb',
-      boxShadow: '0 8px 25px rgba(0,0,0,0.08)'
     }}>
       <h3 style={{ 
         margin: '0 0 20px', 
         fontSize: 18, 
-        fontWeight: 700,
-        color: '#111827',
+        fontWeight: 800,
         display: 'flex',
         alignItems: 'center',
         gap: 8
-      }}>
+      }} className="gradient-text">
         📊 Your Environmental Impact
       </h3>
       
@@ -67,30 +63,48 @@ export default function ImpactTracker({ stats }) {
         {statItems.map((item, index) => (
           <div
             key={index}
+            className="glass"
             style={{
-              background: item.bgColor,
-              border: `2px solid ${item.color}20`,
+              background: `linear-gradient(145deg, ${item.color}30, ${item.color}20)`,
+              border: `2px solid ${item.color}40`,
+              backdropFilter: 'blur(15px)',
+              WebkitBackdropFilter: 'blur(15px)',
               borderRadius: 16,
               padding: 16,
               textAlign: 'center',
-              transition: 'transform 0.2s ease'
+              transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+              boxShadow: `0 10px 25px ${item.color}20`,
+              transform: 'translateZ(0)'
             }}
-            onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
-            onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-8px) scale(1.05)'
+              e.currentTarget.style.boxShadow = `0 20px 40px ${item.color}30`
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)'
+              e.currentTarget.style.boxShadow = `0 10px 25px ${item.color}20`
+            }}
           >
-            <div style={{ fontSize: 24, marginBottom: 8 }}>{item.icon}</div>
+            <div style={{ 
+              fontSize: 28, 
+              marginBottom: 8,
+              textShadow: `0 0 15px ${item.color}60`
+            }}>
+              {item.icon}
+            </div>
             <div style={{
-              fontSize: 20,
-              fontWeight: 700,
-              color: item.color,
+              fontSize: 22,
+              fontWeight: 800,
+              color: '#f8fafc',
+              textShadow: `0 0 10px ${item.color}`,
               marginBottom: 4
             }}>
               {item.value}
             </div>
             <div style={{
               fontSize: 12,
-              color: '#6b7280',
-              fontWeight: 500
+              color: '#cbd5e1',
+              fontWeight: 600
             }}>
               {item.label}
             </div>
@@ -101,13 +115,16 @@ export default function ImpactTracker({ stats }) {
       <div style={{
         marginTop: 20,
         padding: 16,
-        background: 'linear-gradient(135deg, #f0fdf4, #dcfce7)',
+        background: 'linear-gradient(145deg, rgba(16, 185, 129, 0.2), rgba(6, 95, 70, 0.1))',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
         borderRadius: 12,
-        border: '1px solid #10b981',
-        textAlign: 'center'
+        border: '1px solid rgba(16, 185, 129, 0.3)',
+        textAlign: 'center',
+        boxShadow: '0 8px 20px rgba(16, 185, 129, 0.2)'
       }}>
         <div style={{ fontSize: 16, marginBottom: 4 }}>🎉</div>
-        <div style={{ fontSize: 14, fontWeight: 600, color: '#065f46' }}>
+        <div style={{ fontSize: 14, fontWeight: 700, color: '#10b981', textShadow: '0 0 10px rgba(16, 185, 129, 0.5)' }}>
           Amazing work! You're making a real difference for our planet.
         </div>
       </div>

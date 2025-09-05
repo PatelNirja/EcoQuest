@@ -11,22 +11,18 @@ export default function BadgeShowcase({ badges = [] }) {
   const badgeList = badges.length ? badges : defaultBadges
 
   return (
-    <div style={{
-      background: 'white',
+    <div className="card-3d" style={{
       borderRadius: 20,
       padding: 24,
-      border: '2px solid #e5e7eb',
-      boxShadow: '0 8px 25px rgba(0,0,0,0.08)'
     }}>
       <h3 style={{ 
         margin: '0 0 20px', 
         fontSize: 18, 
-        fontWeight: 700,
-        color: '#111827',
+        fontWeight: 800,
         display: 'flex',
         alignItems: 'center',
         gap: 8
-      }}>
+      }} className="gradient-text">
         🏆 Your Badges
       </h3>
       
@@ -38,29 +34,52 @@ export default function BadgeShowcase({ badges = [] }) {
         {badgeList.map((badge) => (
           <div
             key={badge.id}
+            className="glass float"
             style={{
               textAlign: 'center',
               padding: 16,
               borderRadius: 16,
-              background: badge.earned ? 'linear-gradient(135deg, #fef3c7, #fde68a)' : '#f9fafb',
-              border: `2px solid ${badge.earned ? '#d97706' : '#e5e7eb'}`,
+              background: badge.earned 
+                ? 'linear-gradient(145deg, rgba(245, 158, 11, 0.3), rgba(217, 119, 6, 0.2))' 
+                : 'rgba(255, 255, 255, 0.05)',
+              border: `2px solid ${badge.earned ? 'rgba(245, 158, 11, 0.5)' : 'rgba(255, 255, 255, 0.1)'}`,
               opacity: badge.earned ? 1 : 0.6,
-              transition: 'all 0.3s ease',
-              cursor: 'pointer'
+              transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+              cursor: 'pointer',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              boxShadow: badge.earned 
+                ? '0 10px 25px rgba(245, 158, 11, 0.3)' 
+                : '0 5px 15px rgba(0, 0, 0, 0.1)',
+              transform: 'translateZ(0)',
+              animationDelay: `${badge.id * 0.1}s`
             }}
             title={badge.description}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-5px) scale(1.05)'
+              e.currentTarget.style.boxShadow = badge.earned 
+                ? '0 20px 40px rgba(245, 158, 11, 0.4)' 
+                : '0 15px 30px rgba(0, 0, 0, 0.2)'
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0) scale(1)'
+              e.currentTarget.style.boxShadow = badge.earned 
+                ? '0 10px 25px rgba(245, 158, 11, 0.3)' 
+                : '0 5px 15px rgba(0, 0, 0, 0.1)'
+            }}
           >
             <div style={{
               fontSize: 32,
               marginBottom: 8,
-              filter: badge.earned ? 'none' : 'grayscale(100%)'
+              filter: badge.earned ? 'none' : 'grayscale(100%)',
+              textShadow: badge.earned ? '0 0 20px rgba(245, 158, 11, 0.5)' : 'none'
             }}>
               {badge.icon}
             </div>
             <div style={{
               fontSize: 12,
-              fontWeight: 600,
-              color: badge.earned ? '#92400e' : '#6b7280',
+              fontWeight: 700,
+              color: badge.earned ? '#fbbf24' : '#9ca3af',
               lineHeight: 1.3
             }}>
               {badge.name}
@@ -72,28 +91,29 @@ export default function BadgeShowcase({ badges = [] }) {
       <div style={{
         marginTop: 20,
         padding: 16,
-        background: 'linear-gradient(135deg, #eff6ff, #dbeafe)',
+        background: 'linear-gradient(145deg, rgba(59, 130, 246, 0.2), rgba(29, 78, 216, 0.1))',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
         borderRadius: 12,
-        border: '1px solid #93c5fd'
+        border: '1px solid rgba(59, 130, 246, 0.3)',
+        boxShadow: '0 8px 20px rgba(59, 130, 246, 0.2)'
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 8 }}>
           <span style={{ fontSize: 16 }}>🎯</span>
-          <span style={{ fontSize: 14, fontWeight: 600, color: '#1e40af' }}>
+          <span style={{ fontSize: 14, fontWeight: 700, color: '#60a5fa' }}>
             Progress: {badgeList.filter(b => b.earned).length} / {badgeList.length} badges earned
           </span>
         </div>
-        <div style={{
-          background: 'rgba(59, 130, 246, 0.2)',
+        <div className="progress-bar" style={{
+          background: 'rgba(255, 255, 255, 0.1)',
           borderRadius: 8,
-          height: 8,
-          overflow: 'hidden'
+          height: 8
         }}>
-          <div style={{
-            background: 'linear-gradient(90deg, #3b82f6, #1d4ed8)',
+          <div className="progress-fill" style={{
+            background: 'linear-gradient(90deg, #3b82f6, #8b5cf6)',
             height: '100%',
             width: `${(badgeList.filter(b => b.earned).length / badgeList.length) * 100}%`,
-            borderRadius: 8,
-            transition: 'width 0.5s ease'
+            borderRadius: 8
           }} />
         </div>
       </div>
