@@ -13,6 +13,7 @@ import Challenges from './pages/Challenges.jsx'
 import Profile from './pages/Profile.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
+import ForgotPassword from './pages/ForgotPassword.jsx'
 import ProtectedRoute from './routes/ProtectedRoute.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
 import { useAuth } from './context/AuthContext.jsx'
@@ -33,6 +34,7 @@ export default function App() {
           <Route path="/" element={<RootRedirect />} />
           <Route path="/login" element={<AuthLayout><Login /></AuthLayout>} />
           <Route path="/register" element={<AuthLayout><Register /></AuthLayout>} />
+          <Route path="/forgot-password" element={<AuthLayout><ForgotPassword /></AuthLayout>} />
           <Route path="/student" element={<ProtectedRoute roles={["student"]}><AppLayout><Student /></AppLayout></ProtectedRoute>} />
           <Route path="/student/modules" element={<ProtectedRoute roles={["student"]}><AppLayout><Modules /></AppLayout></ProtectedRoute>} />
           <Route path="/student/quizzes" element={<ProtectedRoute roles={["student"]}><AppLayout><Quizzes /></AppLayout></ProtectedRoute>} />

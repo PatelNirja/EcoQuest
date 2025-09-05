@@ -33,13 +33,23 @@ export function AuthProvider({ children }) {
     localStorage.setItem('ecoquest_user', JSON.stringify(next))
   }
 
-  function register({ username, password, role }) {
+  function register({ username, email, password, role }) {
     const users = getUserStore()
     if (users.some(u => u.username === username)) throw new Error('Username already exists')
-    const newUser = { username, password, role }
+    if (users.some(u => u.email === email)) throw new Error('Email already in use')
+    const newUser = { username, email, password, role }
     const nextUsers = [...users, newUser]
     setUserStore(nextUsers)
     login({ username, password })
+  }
+
+  function sendPasswordByEmail({ email }) {
+    const users = getUserStore()
+    const found = users.find(u => u.email === email)
+    if (!found) throw new Error('No account with this email')
+    // Mock: In real app, call backend to email the password reset link or password.
+    // Here we just return the password so the UI can show a demo message.
+    return found.password
   }
 
   function logout() {
@@ -47,7 +57,7 @@ export function AuthProvider({ children }) {
     localStorage.removeItem('ecoquest_user')
   }
 
-  const value = useMemo(() => ({ user, login, register, logout }), [user])
+  const value = useMemo(() => ({ user, login, register, logout, sendPasswordByEmail }), [user])
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
