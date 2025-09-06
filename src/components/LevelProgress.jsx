@@ -69,6 +69,7 @@ export default function LevelProgress({ currentLevel, currentPoints, nextLevelPo
             Level {currentLevel} Eco-Warrior
           </h3>
           <p style={{ margin: '4px 0 0', color: '#cbd5e1', fontWeight: 600, fontSize: 14 }}>
+          </p>
           <p style={{ margin: '4px 0 0', color: '#6b7280', fontWeight: 600, fontSize: 14 }}>
             {currentPoints} / {nextLevelPoints} points
           </p>
