@@ -16,17 +16,17 @@ export default function EcoCard({ title, description, points, difficulty, catego
   return (
     <div className="eco-card card-3d neon-glow" style={{
       background: completed 
-        ? 'linear-gradient(145deg, rgba(16, 185, 129, 0.2), rgba(6, 95, 70, 0.1))' 
-        : 'linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05))',
-      border: `2px solid ${completed ? 'rgba(16, 185, 129, 0.5)' : 'rgba(255, 255, 255, 0.2)'}`,
+        ? 'linear-gradient(145deg, rgba(16, 185, 129, 0.15), rgba(6, 95, 70, 0.08))' 
+        : 'linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7))',
+      border: `2px solid ${completed ? 'rgba(16, 185, 129, 0.4)' : 'rgba(0, 0, 0, 0.08)'}`,
       borderRadius: 16,
       padding: 20,
       position: 'relative',
       transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
       cursor: 'pointer',
       boxShadow: completed 
-        ? '0 20px 40px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.3)' 
-        : '0 20px 40px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+        ? '0 20px 40px rgba(16, 185, 129, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8)' 
+        : '0 20px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9)',
       backdropFilter: 'blur(20px)',
       WebkitBackdropFilter: 'blur(20px)',
       transformStyle: 'preserve-3d'
@@ -53,12 +53,12 @@ export default function EcoCard({ title, description, points, difficulty, catego
           borderRadius: '50%',
           background: `linear-gradient(135deg, ${categoryColors[category] || '#10b981'}40, ${categoryColors[category] || '#10b981'}20)`,
           backdropFilter: 'blur(10px)',
-          border: `1px solid ${categoryColors[category] || '#10b981'}60`,
+          border: `1px solid ${categoryColors[category] || '#10b981'}40`,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           fontSize: 20,
-          boxShadow: `0 8px 20px ${categoryColors[category] || '#10b981'}30`,
+          boxShadow: `0 8px 20px ${categoryColors[category] || '#10b981'}20`,
           transform: 'translateZ(10px)'
         }}>
           {icon}
@@ -68,51 +68,51 @@ export default function EcoCard({ title, description, points, difficulty, catego
           <div style={{ display: 'flex', gap: 8, marginTop: 4 }}>
             <span style={{
               background: `linear-gradient(135deg, ${difficultyColors[difficulty]}30, ${difficultyColors[difficulty]}20)`,
-              color: '#f8fafc',
+              color: '#1f2937',
               backdropFilter: 'blur(10px)',
-              border: `1px solid ${difficultyColors[difficulty]}40`,
+              border: `1px solid ${difficultyColors[difficulty]}30`,
               padding: '2px 8px',
               borderRadius: 12,
               fontSize: 12,
               fontWeight: 500,
               textTransform: 'capitalize',
-              boxShadow: `0 4px 10px ${difficultyColors[difficulty]}20`
+              boxShadow: `0 4px 10px ${difficultyColors[difficulty]}15`
             }}>
               {difficulty}
             </span>
             <span style={{
               background: `linear-gradient(135deg, ${categoryColors[category] || '#10b981'}30, ${categoryColors[category] || '#10b981'}20)`,
-              color: '#f8fafc',
+              color: '#1f2937',
               backdropFilter: 'blur(10px)',
-              border: `1px solid ${categoryColors[category] || '#10b981'}40`,
+              border: `1px solid ${categoryColors[category] || '#10b981'}30`,
               padding: '2px 8px',
               borderRadius: 12,
               fontSize: 12,
               fontWeight: 500,
               textTransform: 'capitalize',
-              boxShadow: `0 4px 10px ${categoryColors[category] || '#10b981'}20`
+              boxShadow: `0 4px 10px ${categoryColors[category] || '#10b981'}15`
             }}>
               {category}
             </span>
           </div>
         </div>
         <div style={{
-          background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(217, 119, 6, 0.2))',
+          background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.1))',
           color: '#fbbf24',
           backdropFilter: 'blur(10px)',
-          border: '1px solid rgba(245, 158, 11, 0.4)',
+          border: '1px solid rgba(245, 158, 11, 0.3)',
           padding: '4px 8px',
           borderRadius: 8,
           fontSize: 14,
           fontWeight: 700,
-          boxShadow: '0 4px 15px rgba(245, 158, 11, 0.3)',
+          boxShadow: '0 4px 15px rgba(245, 158, 11, 0.2)',
           transform: 'translateZ(5px)'
         }}>
           +{points} pts
         </div>
       </div>
       
-      <p style={{ margin: '0 0 16px', color: '#cbd5e1', lineHeight: 1.6, fontSize: 14 }}>{description}</p>
+      <p style={{ margin: '0 0 16px', color: '#6b7280', lineHeight: 1.6, fontSize: 14 }}>{description}</p>
       
       {!completed && (
         <button 
@@ -127,18 +127,18 @@ export default function EcoCard({ title, description, points, difficulty, catego
             fontWeight: 700,
             cursor: 'pointer',
             transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-            boxShadow: '0 8px 25px rgba(16, 185, 129, 0.4)',
+            boxShadow: '0 8px 25px rgba(16, 185, 129, 0.25)',
             transform: 'translateZ(10px)',
             position: 'relative',
             overflow: 'hidden'
           }}
           onMouseOver={(e) => {
             e.target.style.transform = 'translateZ(15px) translateY(-2px) scale(1.02)'
-            e.target.style.boxShadow = '0 15px 35px rgba(16, 185, 129, 0.5)'
+            e.target.style.boxShadow = '0 15px 35px rgba(16, 185, 129, 0.3)'
           }}
           onMouseOut={(e) => {
             e.target.style.transform = 'translateZ(10px)'
-            e.target.style.boxShadow = '0 8px 25px rgba(16, 185, 129, 0.4)'
+            e.target.style.boxShadow = '0 8px 25px rgba(16, 185, 129, 0.25)'
           }}
         >
           Accept Challenge
@@ -154,7 +154,7 @@ export default function EcoCard({ title, description, points, difficulty, catego
           color: '#10b981',
           fontWeight: 700,
           fontSize: 16,
-          textShadow: '0 0 10px rgba(16, 185, 129, 0.5)',
+          textShadow: '0 0 10px rgba(16, 185, 129, 0.3)',
           transform: 'translateZ(5px)'
         }}>
           <span>✅</span>

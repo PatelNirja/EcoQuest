@@ -1,9 +1,9 @@
 :root {
-  --color-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #0f766e 50%, #065f46 75%, #064e3b 100%);
-  --color-surface: rgba(255, 255, 255, 0.1);
-  --color-border: rgba(255, 255, 255, 0.2);
-  --color-text: #f8fafc;
-  --color-muted: #cbd5e1;
+  --color-bg: linear-gradient(135deg, #fefefe 0%, #f8fafc 25%, #f0f9ff 50%, #ecfdf5 75%, #f0fdf4 100%);
+  --color-surface: rgba(255, 255, 255, 0.8);
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-text: #1f2937;
+  --color-muted: #6b7280;
   --color-primary: #10b981;
   --color-primary-600: #059669;
   --color-primary-700: #047857;
@@ -42,9 +42,9 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
   animation: float 20s ease-in-out infinite;
   pointer-events: none;
   z-index: -1;
@@ -58,30 +58,30 @@ body::before {
 
 /* Glassmorphism effect */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 /* 3D Card Effects */
 .card-3d {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 24px;
   padding: 24px;
   position: relative;
   transform-style: preserve-3d;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.1),
-    0 10px 20px rgba(0, 0, 0, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 10px 20px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   overflow: hidden;
 }
 
@@ -92,15 +92,15 @@ body::before {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
 }
 
 .card-3d:hover {
   transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
   box-shadow: 
-    0 30px 60px rgba(0, 0, 0, 0.2),
-    0 15px 30px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    0 30px 60px rgba(0, 0, 0, 0.12),
+    0 15px 30px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 /* Neon glow effects */
@@ -119,9 +119,9 @@ body::before {
   background: conic-gradient(
     from 0deg,
     transparent,
-    rgba(16, 185, 129, 0.3),
+    rgba(16, 185, 129, 0.2),
     transparent,
-    rgba(6, 182, 212, 0.3),
+    rgba(59, 130, 246, 0.2),
     transparent
   );
   animation: rotate 4s linear infinite;
@@ -154,7 +154,7 @@ body::before {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #10b981, #06b6d4, #8b5cf6);
+  background: linear-gradient(135deg, #10b981, #059669, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -163,7 +163,7 @@ body::before {
 
 @keyframes gradient-shift {
   0%, 100% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(90deg); }
+  50% { filter: hue-rotate(45deg); }
 }
 
 /* Modern buttons */
@@ -181,8 +181,8 @@ button {
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 
-    0 8px 25px rgba(16, 185, 129, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 8px 25px rgba(16, 185, 129, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transform-style: preserve-3d;
 }
 
@@ -193,7 +193,7 @@ button::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
   transition: left 0.5s;
 }
 
@@ -204,8 +204,8 @@ button:hover::before {
 button:hover { 
   transform: translateY(-3px) scale(1.02);
   box-shadow: 
-    0 15px 35px rgba(16, 185, 129, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 15px 35px rgba(16, 185, 129, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 button:active {
@@ -214,17 +214,17 @@ button:active {
 
 /* Enhanced card styles */
 .card { 
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 24px;
   padding: 24px;
   position: relative;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
   overflow: hidden;
 }
 
@@ -235,14 +235,14 @@ button:active {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
 }
 
 .card:hover {
   transform: translateY(-8px);
   box-shadow: 
-    0 30px 60px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    0 30px 60px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 /* Links */
@@ -252,8 +252,8 @@ a {
   transition: all 0.3s ease;
 }
 a:hover { 
-  color: #06b6d4; 
-  text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+  color: #059669; 
+  text-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
 }
 
 .muted { 
@@ -267,14 +267,14 @@ a:hover {
 
 /* Progress bars with glow */
 .progress-bar {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 12px;
   overflow: hidden;
   position: relative;
 }
 
 .progress-fill {
-  background: linear-gradient(90deg, #10b981, #06b6d4);
+  background: linear-gradient(90deg, #10b981, #059669);
   height: 100%;
   border-radius: 12px;
   position: relative;
@@ -288,7 +288,7 @@ a:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   animation: shimmer 2s infinite;
 }
 
@@ -306,8 +306,8 @@ a:hover {
 .eco-card:hover {
   transform: translateY(-12px) rotateX(5deg) rotateY(5deg);
   box-shadow: 
-    0 25px 50px rgba(0, 0, 0, 0.2),
-    0 12px 25px rgba(0, 0, 0, 0.1);
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 12px 25px rgba(0, 0, 0, 0.08);
 }
 
 /* Smooth scrolling */
@@ -321,19 +321,19 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.05);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #10b981, #06b6d4);
+  background: linear-gradient(135deg, #10b981, #059669);
   border-radius: 6px;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #059669, #0891b2);
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.7);
+  background: linear-gradient(135deg, #059669, #047857);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
 }
 
 /* Responsive design */
@@ -352,7 +352,7 @@ html {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
+  border: 3px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   border-top-color: #10b981;
   animation: spin 1s ease-in-out infinite;
@@ -377,7 +377,7 @@ html {
   position: absolute;
   width: 4px;
   height: 4px;
-  background: rgba(16, 185, 129, 0.6);
+  background: rgba(16, 185, 129, 0.4);
   border-radius: 50%;
   animation: particle-float 6s infinite linear;
 }
@@ -401,7 +401,7 @@ html {
 
 /* Holographic effect */
 .holographic {
-  background: linear-gradient(45deg, #10b981, #06b6d4, #8b5cf6, #ec4899);
+  background: linear-gradient(45deg, #10b981, #059669, #3b82f6, #8b5cf6);
   background-size: 400% 400%;
   animation: holographic 4s ease-in-out infinite;
 }

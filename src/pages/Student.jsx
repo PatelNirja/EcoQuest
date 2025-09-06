@@ -50,7 +50,8 @@ export default function Student() {
     <div className="particles" style={{ 
       minHeight: '100vh',
       padding: '20px 0',
-      position: 'relative'
+      position: 'relative',
+      background: 'linear-gradient(135deg, #fefefe 0%, #f8fafc 25%, #f0f9ff 50%, #ecfdf5 75%, #f0fdf4 100%)'
     }}>
       {/* Floating particles */}
       {[...Array(8)].map((_, i) => (
@@ -74,11 +75,11 @@ export default function Student() {
             display: 'flex',
             alignItems: 'center',
             gap: 12,
-            textShadow: '0 0 30px rgba(16, 185, 129, 0.5)'
+            textShadow: '0 0 30px rgba(16, 185, 129, 0.3)'
           }}>
             🌟 Welcome back, Eco-Warrior!
           </h1>
-          <p style={{ color: '#cbd5e1', fontSize: 16, margin: 0, fontWeight: 500 }}>
+          <p style={{ color: '#6b7280', fontSize: 16, margin: 0, fontWeight: 500 }}>
             Ready to make a positive impact today?
           </p>
         </div>
@@ -146,8 +147,8 @@ export default function Student() {
                 key={module}
                 className="glass"
                 style={{
-                  background: 'linear-gradient(145deg, rgba(59, 130, 246, 0.2), rgba(29, 78, 216, 0.1))',
-                  border: '2px solid rgba(59, 130, 246, 0.3)',
+                  background: 'linear-gradient(145deg, rgba(59, 130, 246, 0.1), rgba(29, 78, 216, 0.05))',
+                  border: '2px solid rgba(59, 130, 246, 0.2)',
                   backdropFilter: 'blur(15px)',
                   WebkitBackdropFilter: 'blur(15px)',
                   borderRadius: 12,
@@ -155,19 +156,19 @@ export default function Student() {
                   textAlign: 'center',
                   cursor: 'pointer',
                   transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                  boxShadow: '0 8px 20px rgba(59, 130, 246, 0.2)'
+                  boxShadow: '0 8px 20px rgba(59, 130, 246, 0.1)'
                 }}
                 onMouseOver={(e) => {
                   e.currentTarget.style.transform = 'translateY(-8px) scale(1.05)'
-                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(59, 130, 246, 0.3)'
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(59, 130, 246, 0.2)'
                 }}
                 onMouseOut={(e) => {
                   e.currentTarget.style.transform = 'translateY(0) scale(1)'
-                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(59, 130, 246, 0.2)'
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(59, 130, 246, 0.1)'
                 }}
               >
-                <div style={{ fontSize: 28, marginBottom: 8, textShadow: '0 0 15px rgba(59, 130, 246, 0.6)' }}>📖</div>
-                <div style={{ fontSize: 14, fontWeight: 700, color: '#60a5fa' }}>
+                <div style={{ fontSize: 28, marginBottom: 8, textShadow: '0 0 15px rgba(59, 130, 246, 0.3)' }}>📖</div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: '#3b82f6' }}>
                   {module}
                 </div>
               </div>

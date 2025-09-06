@@ -82,7 +82,7 @@ export default function Challenges() {
 
   return (
     <div style={{ 
-      background: 'linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0f9ff 100%)',
+      background: 'linear-gradient(135deg, #fefefe 0%, #f8fafc 25%, #f0f9ff 50%, #ecfdf5 75%, #f0fdf4 100%)',
       minHeight: '100vh',
       padding: '20px 0'
     }}>
@@ -91,7 +91,7 @@ export default function Challenges() {
           <h1 style={{ 
             fontSize: 32, 
             fontWeight: 800, 
-            color: '#065f46',
+            color: '#1f2937',
             margin: '0 0 8px',
             display: 'flex',
             alignItems: 'center',
@@ -99,7 +99,7 @@ export default function Challenges() {
           }}>
             🎯 Eco-Challenges
           </h1>
-          <p style={{ color: '#059669', fontSize: 16, margin: 0 }}>
+          <p style={{ color: '#6b7280', fontSize: 16, margin: 0 }}>
             Take on real-world challenges to make a positive environmental impact
           </p>
         </div>
@@ -113,9 +113,9 @@ export default function Challenges() {
                 style={{
                   background: filter === category 
                     ? 'linear-gradient(135deg, #10b981, #059669)' 
-                    : 'white',
+                    : 'rgba(255, 255, 255, 0.8)',
                   color: filter === category ? 'white' : '#6b7280',
-                  border: `2px solid ${filter === category ? '#10b981' : '#e5e7eb'}`,
+                  border: `2px solid ${filter === category ? '#10b981' : 'rgba(0, 0, 0, 0.08)'}`,
                   borderRadius: 12,
                   padding: '8px 16px',
                   fontSize: 14,
@@ -157,24 +157,24 @@ export default function Challenges() {
         {acceptedChallenges.length > 0 && (
           <div style={{
             marginTop: 32,
-            background: 'white',
+            background: 'rgba(255, 255, 255, 0.9)',
             borderRadius: 20,
             padding: 24,
             border: '2px solid #10b981',
-            boxShadow: '0 8px 25px rgba(0,0,0,0.08)'
+            boxShadow: '0 8px 25px rgba(0,0,0,0.06)'
           }}>
             <h3 style={{ 
               margin: '0 0 16px', 
               fontSize: 18, 
               fontWeight: 700,
-              color: '#065f46',
+              color: '#1f2937',
               display: 'flex',
               alignItems: 'center',
               gap: 8
             }}>
               ✅ Your Active Challenges ({acceptedChallenges.length})
             </h3>
-            <p style={{ color: '#059669', margin: 0 }}>
+            <p style={{ color: '#6b7280', margin: 0 }}>
               Great job! You've accepted {acceptedChallenges.length} challenge{acceptedChallenges.length !== 1 ? 's' : ''}. 
               Complete them to earn points and badges!
             </p>
