@@ -35,7 +35,7 @@ export default function Badges() {
 
   return (
     <div style={{ 
-      background: 'linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #f0f9ff 100%)',
+      background: 'linear-gradient(135deg, #fefefe 0%, #f8fafc 25%, #f0f9ff 50%, #ecfdf5 75%, #f0fdf4 100%)',
       minHeight: '100vh',
       padding: '20px 0'
     }}>
@@ -44,7 +44,7 @@ export default function Badges() {
           <h1 style={{ 
             fontSize: 32, 
             fontWeight: 800, 
-            color: '#065f46',
+            color: '#1f2937',
             margin: '0 0 8px',
             display: 'flex',
             alignItems: 'center',
@@ -52,18 +52,18 @@ export default function Badges() {
           }}>
             🏆 Badge Collection
           </h1>
-          <p style={{ color: '#059669', fontSize: 16, margin: 0 }}>
+          <p style={{ color: '#6b7280', fontSize: 16, margin: 0 }}>
             Earn badges by completing challenges and learning modules
           </p>
         </div>
 
         <div style={{ marginBottom: 32 }}>
           <div style={{
-            background: 'white',
+            background: 'rgba(255, 255, 255, 0.9)',
             borderRadius: 20,
             padding: 24,
-            border: '2px solid #e5e7eb',
-            boxShadow: '0 8px 25px rgba(0,0,0,0.08)',
+            border: '2px solid rgba(0, 0, 0, 0.08)',
+            boxShadow: '0 8px 25px rgba(0,0,0,0.06)',
             textAlign: 'center'
           }}>
             <h2 style={{ margin: '0 0 16px', fontSize: 24, fontWeight: 700, color: '#111827' }}>
@@ -109,9 +109,9 @@ export default function Badges() {
                 style={{
                   background: filter === category 
                     ? 'linear-gradient(135deg, #10b981, #059669)' 
-                    : 'white',
+                    : 'rgba(255, 255, 255, 0.8)',
                   color: filter === category ? 'white' : '#6b7280',
-                  border: `2px solid ${filter === category ? '#10b981' : '#e5e7eb'}`,
+                  border: `2px solid ${filter === category ? '#10b981' : 'rgba(0, 0, 0, 0.08)'}`,
                   borderRadius: 12,
                   padding: '8px 16px',
                   fontSize: 14,
@@ -137,8 +137,8 @@ export default function Badges() {
               <div
                 key={badge.id}
                 style={{
-                  background: badge.earned ? colors.bg : '#f9fafb',
-                  border: `2px solid ${badge.earned ? colors.border : '#e5e7eb'}`,
+                  background: badge.earned ? colors.bg : 'rgba(255, 255, 255, 0.8)',
+                  border: `2px solid ${badge.earned ? colors.border : 'rgba(0, 0, 0, 0.08)'}`,
                   borderRadius: 20,
                   padding: 24,
                   textAlign: 'center',
@@ -200,7 +200,7 @@ export default function Badges() {
                   gap: 8
                 }}>
                   <span style={{
-                    background: badge.earned ? `${colors.border}20` : '#f3f4f6',
+                    background: badge.earned ? `${colors.border}20` : 'rgba(0, 0, 0, 0.05)',
                     color: badge.earned ? colors.border : '#6b7280',
                     padding: '4px 8px',
                     borderRadius: 8,
@@ -211,7 +211,7 @@ export default function Badges() {
                     {badge.rarity}
                   </span>
                   <span style={{
-                    background: badge.earned ? `${colors.border}20` : '#f3f4f6',
+                    background: badge.earned ? `${colors.border}20` : 'rgba(0, 0, 0, 0.05)',
                     color: badge.earned ? colors.border : '#6b7280',
                     padding: '4px 8px',
                     borderRadius: 8,
@@ -249,5 +249,3 @@ export default function Badges() {
     </div>
   )
 }
-
-
